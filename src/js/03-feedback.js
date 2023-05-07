@@ -33,10 +33,15 @@ function onLoadPage() {
 function onButtonSubmit(e) {
   e.preventDefault();
 
-  console.log(date);
+  if (refs.input.value === "" || refs.textarea.value === "") {
+    alert('Всі поля повинні бути заповнені');
+  } else {
+    console.log(date);
 
-  localStorage.removeItem('feedback-form-state');
-
-  refs.input.value = '';
-  refs.textarea.value = '';
+    localStorage.removeItem('feedback-form-state');
+  
+    refs.input.value = '';
+    refs.textarea.value = '';
+  };
+ 
 }
